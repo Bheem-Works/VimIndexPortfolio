@@ -1,3 +1,4 @@
+
 // JavaScript for mobile navigation toggle
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger-menu');
@@ -23,3 +24,51 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
+
+
+  // creating a toggle dark theme sections 
+
+  const toggle = document.querySelector(".toggle");
+  const bodyEl = document.querySelector("body");
+  
+  const isToggle = JSON.parse(localStorage.getItem("mode"));
+  
+  if (isToggle) {
+    bodyEl.classList.add("darkTheme");
+  } else {
+    bodyEl.classList.remove("darkTheme");
+  }
+  
+  toggle.addEventListener("click", () => {
+    bodyEl.classList.toggle("darkTheme");
+  
+    // Save the updated mode based on class presence
+    const darkModeOn = bodyEl.classList.contains("darkTheme");
+    localStorage.setItem("mode", JSON.stringify(darkModeOn));
+  });
+  
+
+
+  
+  // auto write 
+  const vim = document.querySelector(".vim");
+  const text = ['Hi, I Am Vim ', 'I Am FrontEnd Dev', 'I Am Author'];
+  let character = 0; 
+  let index = 0;
+  autoWrite();
+
+  function autoWrite() {
+    character++;
+    vim.innerHTML = `${text[index].slice(0,character)}`;
+    if(character === text[index].length) {
+       index++ 
+       character=0; 
+    } 
+    if(index === text.length) {
+      index = 0;
+      character = 0;
+    }
+
+    setTimeout(autoWrite,300);
+      
+  }

@@ -12,6 +12,12 @@ body {
     background: white;
     color: black;
     height: 500vh;
+    transition: background-color 1s ease, color 0.3s ease;
+  }
+  body.darkTheme {
+    background-color: black;
+    color: white;
+  
 }
 
 /* Navbar Sections */
@@ -20,8 +26,8 @@ nav {
     align-items: center;
     text-align: center;
     justify-content: space-evenly;
-    padding: 30px;
-    background-color: white;
+    padding: 34px;
+    background-color: transparent;
     position: sticky;
     top: 0;
     width: 100%;
@@ -37,6 +43,7 @@ nav {
 nav ul {
     display: flex;
     justify-content: space-around;
+    text-decoration: none;
     gap: 20px;
 }
 
@@ -45,9 +52,9 @@ nav ul li {
 }
 
 nav ul a {
-    text-decoration: none;
+  /* color: white; */
     font-size: 24px;
-    color: black;
+    text-decoration: none;
 }
 
 .btnGroup {
@@ -484,14 +491,13 @@ Each project card has an image on the left and content on the right, arranged in
     max-width: 600px;
     margin: 0 auto 30px;
     line-height: 1.6;
-    color: #444;
+    /* color: #444; */
   }
   
   /* Button Style */
   .contact-btn {
     padding: 10px 20px;
     font-size: 1rem;
-    background: transparent;
     border: 1px solid #aaa;
     border-radius: 6px;
     cursor: pointer;
@@ -517,7 +523,7 @@ Each project card has an image on the left and content on the right, arranged in
   /* Footer Text */
   .footer-text {
     font-size: 0.9rem;
-    color: #777;
+    /* color: #777; */
     margin-top: 10px;
   }
   

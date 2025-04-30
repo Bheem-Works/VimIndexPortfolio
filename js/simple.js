@@ -49,10 +49,14 @@ document.addEventListener('DOMContentLoaded', function() {
   
 
 
-  
+
   // auto write 
   const vim = document.querySelector(".vim");
-  const text = ['Hi, I Am Vim ', 'I Am FrontEnd Dev', 'I Am Author'];
+const text = [
+    '👋 Hi, I Am Vim 👨‍💻',
+    '🌟 I Am a Frontend Developer 🚀',
+    '📚 I Am an Author and a Creator ✍️'
+];
   let character = 0; 
   let index = 0;
   autoWrite();

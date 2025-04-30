@@ -1,0 +1,835 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-padding-top: 120px; /* Prevents sticky nav overlap */
+}
+
+body {
+    margin: 0;
+    background: white;
+    color: black;
+    height: 500vh;
+}
+
+/* Navbar Sections */
+nav {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-evenly;
+    padding: 30px;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(45px);
+}
+
+.logo img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul a {
+    text-decoration: none;
+    font-size: 24px;
+    color: black;
+}
+
+.btnGroup {
+    display: flex;
+    gap: 20px;
+}
+
+button {
+    font-size: 17px;
+}
+
+/* Landing Page */
+.centerText {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 20vh;
+}
+
+.vim {
+    font-size: 70px;
+    margin: 0;
+}
+
+p {
+    font-size: 20px;
+}
+
+.downIcon i {
+    margin-top: 20vh;
+    font-size: 40px;
+    color: black;
+}
+
+/* Sections */
+section {
+    padding-top: 3rem; /* Optional visual padding */
+}
+
+/* About Me */
+#aboutMe {
+    margin-top: 5rem; /* Ensure space from top for scroll alignment */
+}
+
+.AboutText {
+    text-align: center;
+    justify-content: center;
+    position: relative;
+}
+
+.AboutText::before {
+    content: "";
+    width: 300px;
+    height: 3px;
+    background-color: black;
+    left: 340px;
+    top: 25px;
+    position: absolute;
+}
+
+.AboutText::after {
+    content: "";
+    width: 300px;
+    height: 3px;
+    background-color: black;
+    right: 340px;
+    top: 25px;
+    position: absolute;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+.wrapParagraph {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 500px;
+    text-wrap: wrap;
+}
+
+.wrap {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: 4rem;
+    gap: 6rem;
+}
+
+/* Experiences Section */
+.experiences {
+    margin-top: 6rem;
+    margin-bottom: 5rem;
+}
+
+.experienceText {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 7rem;
+}
+
+.experienceText::before {
+    content: "";
+    width: 300px;
+    height: 3px;
+    background-color: black;
+    left: 320px;
+    top: 25px;
+    position: absolute;
+}
+
+.experienceText::after {
+    content: "";
+    width: 300px;
+    height: 3px;
+    background-color: black;
+    right: 320px;
+    top: 25px;
+    position: absolute;
+}
+
+.jobTitle {
+    display: flex;
+    flex-direction: column;
+    margin-left: 22.5rem;
+}
+
+#job {
+    position: relative;
+    margin-bottom: -10px;
+    font-size: 26px;
+}
+
+#job::before {
+    content: "";
+    width: 300px;
+    height: 3px;
+    background-color: black;
+    left: -40px;
+    top: 60px;
+    position: absolute;
+}
+
+#job::after{
+    content: "";
+    width: 2px;
+    height: 250px;
+    background-color: black;
+    left: 260px;
+    right: 90px;
+    top: -60px;
+    position: absolute;
+}
+
+.ulList{
+    margin-top: -12rem;
+    align-items: center;
+    /* text-align: center; */
+    margin-left: 16rem;
+}
+
+.ulList li{
+    font-size: 25px;
+    list-style: none;
+    align-items: fle;
+}
+
+
+/* Featurest Projects */
+
+#featuresSection{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.featureText{
+    font-size: 37px;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    font-weight: bolder;
+}
+.featureText::after {
+    content: "";
+    width: 300px;
+    height: 3px;
+    background-color: black;
+    right: 300px;
+    top: 25px;
+    position: absolute;
+}
+
+.featureText::before {
+    content: "";
+    width: 300px;
+    height: 3px;
+    background-color: black;
+    left: 300px;
+    top: 25px;
+    position: absolute;
+}
+
+.flex1{
+    margin-top: 5rem;
+    display: flex;
+    /* flex-direction: row-reverse; */
+    justify-content: center;
+    gap: 80px;
+}
+
+.projectInfo{
+    width: 550px;
+}
+
+.langaugeLinks{
+    align-items: start;
+    text-align: start;
+    display: flex;
+    gap: 30px;
+    margin-top: -15px;
+}
+.langaugeLinks p {
+    text-transform: uppercase;
+    text-align: start;
+    align-items: center;
+    font-size: 24px;
+}
+
+/* icons  */
+
+.iconsGit{
+    color: black;
+    display: flex;
+    justify-content: space-evenly;
+    justify-content: start;
+    gap: 20px;
+}
+
+.iconsGit i{
+    font-size: 30px;
+}
+
+
+.flex2{
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 80px;
+}
+
+.projectInfo{
+    width: 550px;
+}
+
+.langaugeLinks{
+    align-items: start;
+    text-align: start;
+    display: flex;
+    gap: 30px;
+    margin-top: -15px;
+}
+.langaugeLinks p {
+    text-transform: uppercase;
+    text-align: start;
+    align-items: center;
+    font-size: 24px;
+}
+
+/* icons  */
+
+.iconsGit{
+    color: black;
+    display: flex;
+    justify-content: space-evenly;
+    justify-content: start;
+    gap: 20px;
+}
+
+.iconsGit i{
+    font-size: 30px;
+}
+
+
+/* others features  */
+/* others features  */
+.others-projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.othersText {
+    margin-top: 9rem;
+    font-size: 37px;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* before after of the othersText */
+.othersText::after {
+    content: "";
+    width: 300px;
+    height: 3px;
+    background-color: black;
+    right: 330px;
+    top: 25px;
+    position: absolute;
+}
+
+.othersText::before {
+    content: "";
+    width: 300px;
+    height: 3px;
+    background-color: black;
+    left: 330px;
+    top: 25px;
+    position: absolute;
+}
+
+/* Project cards layout */
+.project-card {
+    width: 45%;
+    max-width: 500px;
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.project-image {
+    width: 110px;
+    height: 160px;
+    flex-shrink: 0;
+}
+
+.project-image img{
+    width: 110px;
+    height: 150px;
+    background-color: rebeccapurple;
+}
+
+.project-content {
+    flex-grow: 1;
+}
+
+.project-content h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.project-content p {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.project-tech {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.project-tech span {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.project-links {
+    display: flex;
+    gap: 10px;
+}
+
+.project-links a {
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+/* Comment: This CSS builds upon your existing styling while creating a grid layout for the "Other Projects" section to match the image. 
+Each project card has an image on the left and content on the right, arranged in a 2x2 grid. */
+
+/* Contact Section */
+#contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 80px 20px;
+  }
+  
+  /* Section Title with Lines */
+  .section-title {
+    margin-bottom: 10rem;
+    font-size: 2rem;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+  }
+  
+  .section-title::before,
+  .section-title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 250px;
+    height: 3px;
+    background-color: black;
+  }
+  
+  .section-title::before {
+    left: -260px;
+  }
+  
+  .section-title::after {
+    right: -260px;
+  }
+  
+  /* Contact Text */
+  .contact-text {
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+    color: #444;
+  }
+  
+  /* Button Style */
+  .contact-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: transparent;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+
+  /* Social Icons */
+  .social-icons {
+    margin: 40px 0 20px;
+  }
+  
+  .social-icons a {
+    margin: 0 10px;
+    font-size: 24px;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #0077b5; /* LinkedIn color */
+  }
+  
+  /* Footer Text */
+  .footer-text {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 10px;
+  }
+  
+
+
+  /* Responsive Styles */
+
+/* Base responsive settings */
+@media screen and (max-width: 992px) {
+    html {
+      scroll-padding-top: 80px;
+    }
+  }
+  
+  /* Mobile Navigation */
+  @media screen and (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      padding: 15px;
+    }
+    
+    nav ul {
+      flex-direction: column;
+      width: 100%;
+      gap: 10px;
+      margin-top: 15px;
+      padding: 0;
+    }
+    
+    .btnGroup {
+      width: 100%;
+      justify-content: center;
+      margin-top: 15px;
+    }
+    
+    button {
+      font-size: 14px;
+      padding: 8px 15px;
+    }
+  }
+  
+  /* Landing Page */
+  @media screen and (max-width: 768px) {
+    .centerText {
+      margin-top: 10vh;
+      padding: 0 15px;
+    }
+    
+    .vim {
+      font-size: 40px;
+    }
+    
+    p {
+      font-size: 16px;
+    }
+    
+    .downIcon i {
+      margin-top: 10vh;
+      font-size: 30px;
+    }
+  }
+  
+  /* About Me Section */
+  @media screen and (max-width: 992px) {
+    .AboutText::before, 
+    .AboutText::after,
+    .experienceText::before,
+    .experienceText::after,
+    .featureText::before,
+    .featureText::after,
+    .othersText::before,
+    .othersText::after,
+    .section-title::before,
+    .section-title::after {
+      width: 100px;
+    }
+    
+    .AboutText::before {
+      left: 50px;
+    }
+    
+    .AboutText::after {
+      right: 50px;
+    }
+  }
+  
+  /* Mobile-Only Responsive Styles */
+
+/* Hamburger menu styling */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+  
+  /* All mobile styles in one media query */
+  @media screen and (max-width: 768px) {
+    /* Base adjustments */
+    html {
+      scroll-padding-top: 80px;
+    }
+    
+    /* Mobile Navigation */
+    nav {
+      justify-content: end;
+      padding: 15px 20px;
+      flex-wrap: wrap;
+    }
+    
+    .hamburger-menu {
+      display: block    ;
+      order: 2;
+    }
+    
+    .logo {
+      order: 1;
+      display: flex;
+      justify-content: start;
+      align-items: start;
+      text-align: start;
+    }
+    .logo img{
+        width: 30px;
+        justify-content: start;
+        align-items: start;
+    }
+    /* Animate bars when menu is active */
+    .hamburger-menu.active .bar:nth-child(1) {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .hamburger-menu.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    
+    .hamburger-menu.active .bar:nth-child(3) {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
+    nav ul {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      order: 3;
+      gap: 15px;
+      margin-top: 15px;
+      padding: 0;
+      text-align: end;
+    }
+    
+    nav ul.active {
+      display: flex;
+    }
+    
+    .btnGroup {
+      display: none;
+      width: 100%;
+      justify-content: center;
+      margin-top: 15px;
+      order: 4;
+    }
+    
+    .btnGroup.active {
+      display: flex;
+    }
+    
+    button {
+      font-size: 14px;
+      padding: 8px 15px;
+      display: none;
+    }
+    
+    /* Landing Page */
+    .centerText {
+      margin-top: 10vh;
+      padding: 0 15px;
+    }
+    
+    .vim {
+      font-size: 40px;
+    }
+    
+    p {
+      font-size: 16px;
+    }
+    
+    .downIcon i {
+      margin-top: 10vh;
+      font-size: 30px;
+    }
+    
+    /* Section Headers - Remove decorative lines */
+    .AboutText::before, 
+    .AboutText::after,
+    .experienceText::before,
+    .experienceText::after,
+    .featureText::before,
+    .featureText::after,
+    .othersText::before,
+    .othersText::after,
+    .section-title::before,
+    .section-title::after {
+      display: none;
+    }
+    
+    /* About Me Section */
+    .wrap {
+      flex-direction: column;
+      margin-left: 0;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .wrapParagraph {
+      width: 90%;
+      max-width: 500px;
+    }
+    
+    /* Experience Section */
+    .jobTitle {
+      margin-left: 0;
+      align-items: center;
+      width: 100%;
+    }
+    
+    #job {
+      text-align: center;
+    }
+    
+    #job::before {
+      width: 80%;
+      left: 10%;
+      right: 10%;
+    }
+    
+    #job::after {
+      display: none;
+    }
+    
+    .ulList {
+      margin-left: 0;
+      margin-top: 2rem;
+      padding-left: 20px;
+    }
+    
+    .ulList li {
+      font-size: 18px;
+      text-align: left;
+    }
+    
+    /* Featured Projects */
+    .flex1, .flex2 {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .projectInfo {
+      width: 90%;
+      text-align: center;
+    }
+    
+    .langaugeLinks {
+      justify-content: center;
+    }
+    
+    .iconsGit {
+      justify-content: center;
+    }
+    
+    /* Other Projects */
+    .others-projects {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .project-card {
+      width: 90%;
+      max-width: none;
+    }
+    
+    /* Contact Section */
+    .contact-text {
+      padding: 0 15px;
+    }
+    
+    .social-icons a {
+      font-size: 20px;
+      margin: 0 8px;
+    }
+    
+    /* Fix images to be responsive */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .project-image img {
+      width: 90px;
+      height: auto;
+    }
+    
+    .project-image {
+      width: 90px;
+      height: auto;
+    }
+  }

@@ -53,7 +53,7 @@ Welcome to the source code for my personal portfolio website. This website is a 
 
 ## 🚀 Live Demo
 
-> Visit: [https://your-portfolio-live-link.com](https://your-portfolio-live-link.com)
+> Visit: [https://your-portfolio-live-link.com](https://vim-index-portfolio.vercel.app/)
 
 ---
 
@@ -61,7 +61,7 @@ Welcome to the source code for my personal portfolio website. This website is a 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/portfolio-website.git
+   git clone https://github.com/Bheem-Works/VimIndexPortfolio.git
    cd portfolio-website
    ```
 
@@ -87,4 +87,3 @@ Feel free to connect with me:
 
 This project is open source and free to use. Customize it to make it your own portfolio!
 
----

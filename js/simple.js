@@ -53,8 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // auto write 
   const vim = document.querySelector(".vim");
 const text = [
-    'Hi, I Am Vim', 'Front-end dev', 'web designer', 'UI/UX', 
-];
+    'Hi, I Am Vim'];
   let character = 0; 
   let index = 0;
   autoWrite();
@@ -66,10 +65,6 @@ const text = [
        index++ 
        character=0; 
     } 
-    if(index === text.length) {
-      index = 0;
-      character = 0;
-    }
 
     setTimeout(autoWrite,300);
       

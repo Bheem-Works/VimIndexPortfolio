@@ -52,9 +52,9 @@ nav ul li {
 }
 
 nav ul a {
-  /* color: white; */
     font-size: 24px;
     text-decoration: none;
+    color:rgb(147, 144, 144);
 }
 
 .btnGroup {
@@ -83,10 +83,40 @@ p {
     font-size: 20px;
 }
 
+
+/* Marque Box  */
+.marquee-box {
+  position: relative;
+  width: 80%;
+  margin-left: 20rem;
+  max-width: 800px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.marquee-text {
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.marquee-text span {
+  display: inline-block;
+  padding: 0 20px;
+  font-size: 24px;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+
 .downIcon i {
     margin-top: 20vh;
     font-size: 40px;
-    color: black;
 }
 
 /* Sections */
@@ -96,7 +126,7 @@ section {
 
 /* About Me */
 #aboutMe {
-    margin-top: 5rem; /* Ensure space from top for scroll alignment */
+    margin-top: 30rem; /* Ensure space from top for scroll alignment */
 }
 
 .AboutText {
@@ -222,7 +252,7 @@ h1 {
 .ulList li{
     font-size: 25px;
     list-style: none;
-    align-items: fle;
+    align-items: flex-end;
 }
 
 
@@ -839,3 +869,19 @@ Each project card has an image on the left and content on the right, arranged in
       height: auto;
     }
   }
+
+
+
+
+  /* Marquuee Sections */
+
+  marquee{
+    /* border: 2px solid black; */
+    margin-left: 30rem;
+    width: 700px;
+    font-size: 30px;
+    margin-top: 3rem;
+    padding:20px;
+    text-transform: capitalize;
+  }
+

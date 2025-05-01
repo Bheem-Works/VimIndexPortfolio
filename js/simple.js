@@ -51,11 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   // auto write 
-  const vim = document.querySelector(".vim");
+const vim = document.querySelector(".vim");
 const text = [
-    '👋 Hi, I Am Vim 👨‍💻',
-    '🌟 I Am a Frontend Developer 🚀',
-    '📚 I Am an Author and a Creator ✍️'
+    ' Hi, I Am Vim ',
 ];
   let character = 0; 
   let index = 0;
@@ -68,11 +66,80 @@ const text = [
        index++ 
        character=0; 
     } 
-    if(index === text.length) {
-      index = 0;
-      character = 0;
-    }
 
     setTimeout(autoWrite,300);
       
   }
+
+
+  // marque Sections; 
+  const quotes = [
+    "If you believe it.You will Achieve it!. — Vim Magar",
+    "Be nice, be humble. You never know what someone is going through. — Vim Magar",
+    "The fate demanded and has to be given. — Vim Magar",
+    "In the middle of difficulty lies opportunity. — Albert Einstein",
+  ];
+  
+  // Function to combine all quotes with spacing
+  function combineQuotes() {
+    return quotes.join("  • ") + "" +  " • ";
+  }
+  
+  const combinedQuotes = combineQuotes();
+  const quoteElement = document.getElementById('quote');
+  quoteElement.textContent = combinedQuotes;
+  
+  // Calculate the total width of the text
+  const calculateTextWidth = () => {
+    const tempSpan = document.createElement('span');
+    tempSpan.style.visibility = 'hidden';
+    tempSpan.style.position = 'absolute';
+    tempSpan.style.whiteSpace = 'nowrap';
+    tempSpan.style.fontSize = '24px';
+    tempSpan.textContent = combinedQuotes;
+    document.body.appendChild(tempSpan);
+    const width = tempSpan.offsetWidth;
+    document.body.removeChild(tempSpan);
+    return width;
+  };
+  
+  // Set up marquee animation
+  function setupMarquee() {
+    const marqueeElement = document.getElementById('marquee');
+    const textWidth = calculateTextWidth();
+    const boxWidth = document.querySelector('.marquee-box').offsetWidth;
+    
+    // Create multiple spans to fill the marquee
+    let content = '';
+    const repeats = Math.ceil((boxWidth * 2) / textWidth) + 1;
+    
+    for (let i = 0; i < repeats; i++) {
+      content += combinedQuotes;
+    }
+    
+    quoteElement.textContent = content;
+    
+    // Animate the marquee
+    let position = 0;
+    const speed = 50; // Lower value = faster scroll
+    
+    function animate() {
+      position -= 1;
+      
+      // Reset position when text has scrolled completely
+      if (position <= -textWidth) {
+        position = 0;
+      }
+      
+      marqueeElement.style.transform = `translateX(${position}px)`;
+      requestAnimationFrame(animate);
+    }
+    
+    animate();
+  }
+  
+  // Initialize marquee when page is loaded
+  window.addEventListener('load', setupMarquee);
+  
+  // Reinitialize on window resize
+  window.addEventListener('resize', setupMarquee);

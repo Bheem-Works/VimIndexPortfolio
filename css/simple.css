@@ -885,3 +885,82 @@ Each project card has an image on the left and content on the right, arranged in
     text-transform: capitalize;
   }
 
+ /* Time limited  */
+
+ .timeLimited{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+ }
+   .offer-container {
+      background: linear-gradient(to right, #3498db, #8e44ad);
+      color: white;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    
+    .title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    .subtitle {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    
+    .time-block {
+      background-color: white;
+      color: #333;
+      border-radius: 4px;
+      padding: 10px;
+      min-width: 50px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    
+    .time-label {
+      font-size: 12px;
+      margin-top: 5px;
+    }
+    
+    .button {
+      background-color: #f1c40f;
+      color: #333;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 20px;
+    }
+    
+    .button:hover {
+      background-color: #e2b607;
+    }
+    
+    .expired {
+      background-color: #e74c3c;
+      padding: 15px;
+      border-radius: 6px;
+      margin-top: 15px;
+    }
+    
+    .disclaimer {
+      font-size: 12px;
+      margin-top: 15px;
+      opacity: 0.8;
+    }

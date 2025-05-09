@@ -143,3 +143,35 @@ const text = [
   
   // Reinitialize on window resize
   window.addEventListener('resize', setupMarquee);
+
+
+
+  // Time Limited 
+
+  // set end date 
+  const endDate = new Date();
+  endDate.setDate(endDate.getDate() + 3);
+
+  // function limitedDate 
+  const countDate = setInterval(()=>{
+
+    let now = new Date().getTime();
+    let remainingDate = endDate.getTime() - now;
+    
+    // logical 
+    const days = Math.floor(remainingDate / (1000*60*60*24));
+    const hours = Math.floor(remainingDate % (1000*60*60*24) /(1000*60*60));
+    const minutes = Math.floor(remainingDate % (1000 * 60*60) / (1000 * 60));
+    const seconds = Math.floor(remainingDate % (1000 * 60) / (1000));
+    
+    document.getElementById('days').innerHTML = (days < 0 ? '0' : '') + days;
+    document.getElementById('hours').innerHTML = (hours < 0 ? '0' : '') + hours;
+    document.getElementById('minutes').innerHTML = (minutes < 0 ? '0' : '') + minutes
+     document.getElementById('seconds').innerHTML = (seconds < 0 ? '0' : '') + seconds
+
+     if(remainingDate <= 0 ) {
+      document.getElementById(offer-content).style.display = "block";
+      document.getElementById(expired-message).style.display = "none";
+     }
+  },1000)
+    

@@ -148,30 +148,60 @@ const text = [
 
   // Time Limited 
 
-  // set end date 
-  const endDate = new Date();
-  endDate.setDate(endDate.getDate() + 3);
-
-  // function limitedDate 
-  const countDate = setInterval(()=>{
-
-    let now = new Date().getTime();
-    let remainingDate = endDate.getTime() - now;
+const getEndDate = () => {
+  const savedEndDate = localStorage.getItem('countdownEndDate');
+  
+  if (savedEndDate) {
+    return new Date(parseInt(savedEndDate));
+  } else {
+    // Create a new end date (3 days from now)
+    const endDate = new Date();
+    endDate.setDate(endDate.getDate() + 3);
     
-    // logical 
-    const days = Math.floor(remainingDate / (1000*60*60*24));
-    const hours = Math.floor(remainingDate % (1000*60*60*24) /(1000*60*60));
-    const minutes = Math.floor(remainingDate % (1000 * 60*60) / (1000 * 60));
-    const seconds = Math.floor(remainingDate % (1000 * 60) / (1000));
-    
-    document.getElementById('days').innerHTML = (days < 0 ? '0' : '') + days;
-    document.getElementById('hours').innerHTML = (hours < 0 ? '0' : '') + hours;
-    document.getElementById('minutes').innerHTML = (minutes < 0 ? '0' : '') + minutes
-     document.getElementById('seconds').innerHTML = (seconds < 0 ? '0' : '') + seconds
+    // Save to localStorage
+    localStorage.setItem('countdownEndDate', endDate.getTime().toString());
+    return endDate;
+  }
+};
 
-     if(remainingDate <= 0 ) {
-      document.getElementById(offer-content).style.display = "block";
-      document.getElementById(expired-message).style.display = "none";
-     }
-  },1000)
+// Initialize end date
+const endDate = getEndDate();
+
+// Countdown logic function
+const countDownLogic = () => {
+  const now = new Date().getTime();
+  const remainingTime = endDate.getTime() - now;
+  
+  // Calculate time components
+  const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+  
+  // Update DOM
+  document.getElementById('days').innerHTML = days < 10 ? '0' + days : days;
+  document.getElementById('hours').innerHTML = hours < 10 ? '0' + hours : hours;
+  document.getElementById('minutes').innerHTML = minutes < 10 ? '0' + minutes : minutes;
+  document.getElementById('seconds').innerHTML = seconds < 10 ? '0' + seconds : seconds;
+  
+  // Check if countdown has expired
+  if (remainingTime <= 0) {
+    clearInterval(timerInterval);
+    document.getElementById('offer-content').style.display = "block";
+    document.getElementById('expired-message').style.display = "none";
     
+    // Optional: Clear localStorage when expired
+    // localStorage.removeItem('countdownEndDate');
+  }
+};
+
+// Run countdown immediately and then every second
+countDownLogic();
+const timerInterval = setInterval(countDownLogic, 1000);
+
+// For testing: Reset the countdown
+const resetCountdown = () => {
+  localStorage.removeItem('countdownEndDate');
+  location.reload();
+};
+
